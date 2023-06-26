@@ -1,5 +1,5 @@
 def magic_calculation(a, b):
-    res = 0
+    result = 0
     for j in range(1, 3):
         try:
             if j > a:
@@ -9,4 +9,4 @@ def magic_calculation(a, b):
         except:
             res = a + b
             break
-    return (res)
+    return (result)
