@@ -14,6 +14,7 @@ def list_division(my_list_1, my_list_2, list_length):
             print("out of range")
             result = 0
         except ValueError:
+            print("could not convert string to float:", my_list_2[j])
             result = 0
         finally:
             lis_nw.append(result)
