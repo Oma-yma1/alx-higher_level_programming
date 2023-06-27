@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import math
 
 class MagicClass:
@@ -12,3 +13,4 @@ class MagicClass:
 
     def circumference(self):
         return 2 * math.pi * self.__radius
+
