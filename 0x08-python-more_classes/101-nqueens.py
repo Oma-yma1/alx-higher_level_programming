@@ -31,6 +31,7 @@ def sa_fe(a, b, c):
         y -= 1
     return True
 
+
 def n_queens(a, c, sols):
     """solve the N queens problem"""
     z = len(a)
@@ -48,19 +49,22 @@ def n_queens(a, c, sols):
             n_queens(a, c + 1, sols)
             a[i][c] = 0
 
+
 def solv_nqueens(z):
     """solve n queens"""
     a = [[0 for _ in range(z)] for _ in range(z)]
     sols = []
-    n_queens(a, 0,sols)
+    n_queens(a, 0, sols)
     for sol in sols:
         print(sol)
+
+
 if __name__ == "__main__":
-    if len(sys.argv)!= 2:
+    if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
     try:
-        z =int(sys.argv[1])
+        z = int(sys.argv[1])
     except ValueError:
         print("N must be a number")
         sys.exit(1)
