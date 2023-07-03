@@ -50,4 +50,4 @@ class Rectangle:
         """Print the rectangle with the character #"""
         if self.width == 0 or self.height == 0:
             return ""
-        return ((("#" * self.width)+ "\n") * self.height)[:-1]
+        return ((("#" * self.width) + "\n") * self.height)[:-1]
