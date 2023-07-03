@@ -54,9 +54,12 @@ class Rectangle:
         """Print the rectangle with the character #"""
         if self.width == 0 or self.height == 0:
             return ""
-        return str(self.print_symbol) * self.width + "\n" +\
-                (str(self.print_symbol) * self.width + "\n") *\
-                (self.height - 1)
+        tot = ""
+        for i in range(self.__height):
+            tot += (str(self.print_symbol) * self.__width)
+            if i != self.__height - 1:
+                tot += "\n"
+        return tot
 
     def __repr__(self):
         """Recreate a new instance by using eval"""
