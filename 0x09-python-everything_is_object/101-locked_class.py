@@ -12,4 +12,5 @@ class LockedClass:
         elif att == "first_name":
             super().__setattr__(att, val)
         else:
-            raise AttributeError("'LockedClass' object has no attribute '{}'".format(att))
+            raise AttributeError("'LockedClass' object has no \
+attribute '{}'".format(att))
