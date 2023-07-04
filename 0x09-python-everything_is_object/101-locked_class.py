@@ -3,6 +3,7 @@
 
 
 class LockedClass:
+    """LockedClass"""
     __slots__ = ["first_name"]
 
     def __setattr__(self, att, val):
