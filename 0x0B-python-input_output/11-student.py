@@ -15,11 +15,11 @@ class Student:
         if attrs is None:
             return self.__dict__
         else:
-             jso_dic = {}
-             for attr in attrs:
-                 if hasattr(self, attr):
-                     jso_dic[attr] = getattr(self, attr)
-             return jso_dic
+            jso_dic = {}
+            for attr in attrs:
+                if hasattr(self, attr):
+                    jso_dic[attr] = getattr(self, attr)
+            return jso_dic
 
     def reload_from_json(self, json):
         """"reload from json"""
