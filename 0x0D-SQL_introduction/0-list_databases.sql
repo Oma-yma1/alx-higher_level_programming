@@ -1,3 +1,2 @@
--- list databases
+-- List all databases
 SHOW DATABASES;
-
