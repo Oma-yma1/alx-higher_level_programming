@@ -1,5 +1,5 @@
 -- displays the max temperature of each state
 SELECT state, MAX(value) AS max_temp
-FROM Temperatures
+FROM temperatures
 GROUP BY state
 ORDER BY state;
