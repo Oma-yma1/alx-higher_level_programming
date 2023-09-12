@@ -4,5 +4,5 @@ exports.nbOccurences = function (list, searchElement) {
   list.forEach(element => {
     if (element === searchElement) coun++;
   });
-return coun;
+  return coun;
 };
