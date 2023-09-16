@@ -11,10 +11,9 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT cities.name FROM cities\
             JOIN states ON cities.state_id = states.id\
-            AND states.name = '{:s}'\
-            ORDER BY cities.id ASC".format(argv[4]))
+            WHERE states.name=%s", (argv[4],))
     rows = cur.fetchall()
-    for i in rows:
-        print(i)
+    temp = list(i[0] for i in rows)
+    print(*temp, sep=", ")
     cur.close()
     db.close()
