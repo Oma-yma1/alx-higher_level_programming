@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" script that creates State “California” with the City “San Francisco” from  hbtn_0e_100_usa """
+""" script that creates State “California” with the City “San Francisco"""
 import sys
 from relationship_state import Base, State
 from relationship_city import City
