@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" script that changes the name of State object from hbtn_0e_6_usa"""
+""" script that prints all City objects from hbtn_0e_14_usa"""
 import sys
 from model_state import Base, State
+from model_city import City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
@@ -12,6 +13,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_instance = session.query(State).filter_by(id=2).first()
-    new_instance.name = 'New Mexico'
-    session.commit()
+    for instance in (session.query(State.name, City.id, City.name)
+                     .filter(State.id == City.state_id)):
+        print(instance[0] + ": (" + str(instance[1]) + ") " + instance[2])
