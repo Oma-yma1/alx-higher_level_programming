@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" script lists State objects, and corresponding City objects, contained hbtn_0e_101_usa"""
+""" script lists State objects, and corresponding City objects"""
 import sys
 from relationship_state import Base, State
 from relationship_city import City
