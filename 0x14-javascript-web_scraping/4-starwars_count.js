@@ -9,10 +9,11 @@ request(apiUrl, (error, response, body) => {
   } else if (response.statusCode !== 200) {
     console.error('Request failed with status code:', response.statusCode);
   } else {
-    const moviedata = JSON.parse(body);
+    // Parse the JSON response
+    const movieData = JSON.parse(body);
     let count = 0;
-    for (const movie of moviedata.results) {
-      if (movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterid}/`)) {
+    for (const movie of movieData.results) {
+      if (movie.characters.includes('https://swapi-api.alx-tools.com/api/people/${characterid}/')) {
         count++;
       }
     }
