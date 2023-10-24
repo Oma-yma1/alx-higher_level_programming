@@ -1,22 +1,23 @@
 #!/usr/bin/node
 
 const request = require('request');
-const apiUrl = process.argv[2];
-const characterid = 18;
-request(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error('Error:', error);
-  } else if (response.statusCode !== 200) {
-    console.error('Request failed with status code:', response.statusCode);
-  } else {
-    // Parse the JSON response
-    const movieData = JSON.parse(body);
+const apiurl = process.argv[2];
+request(apiurl, function (err, response, body) {
+  if (err) {
+    console.log(err);
+  } else if (response.statusCode === 200) {
+    const results = JSON.parse(body).results;
     let count = 0;
-    for (const movie of movieData.results) {
-      if (movie.characters.includes('https://swapi-api.alx-tools.com/api/people/${characterid}/')) {
-        count++;
+    for (const filmId in results) {
+      const characters = results[filmId].characters;
+      for (const charId in characters) {
+        if (characters[charId].includes('18')) {
+          count++;
+        }
       }
     }
     console.log(count);
+  } else {
+    console.log('An error occured. Status code: ' + response.statusCode);
   }
 });
