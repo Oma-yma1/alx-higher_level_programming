@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const request = require('request');
-const apiurl = 'http://swapi-api.hbtn.io/api/films/' + process.argv[2];
+const apiurl = 'http://swapi-api.alx-tools.com/api/films/' + process.argv[2];
 request.get(apiurl, function (error, response, body) {
   if (error) {
     throw error;
